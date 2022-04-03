@@ -1,16 +1,20 @@
 <script>
 	import SimplexNoise from 'simplex-noise';
 	import { onMount } from 'svelte';
-	import { fade, fly } from 'svelte/transition';
+	import { fade } from 'svelte/transition';
 	import { spline } from '../utils/spline';
-	// import { spline } from "./utils/spline";
 	import { spring } from 'svelte/motion';
-	const coords = spring({
-		x: 0,
-		y: 0
-	});
+	import { circIn } from 'svelte/easing';
+
+	let coords = spring(
+		{ x: 50, y: 50 },
+		{
+			stiffness: 0.1,
+			damping: 0.25
+		}
+	);
+	let size = spring(10);
 	let path;
-	let mouse;
 	onMount(async () => {
 		let noiseStep = 0.001;
 
@@ -20,10 +24,8 @@
 
 		(function animate() {
 			path.setAttribute('d', spline(points, 1, true));
-
 			for (let i = 0; i < points.length; i++) {
 				const point = points[i];
-
 				const nX = noise(point.noiseOffsetX, point.noiseOffsetX);
 				const nY = noise(point.noiseOffsetY, point.noiseOffsetY);
 				const x = map(nX, -1, 1, point.originX - 20, point.originX + 20);
@@ -35,7 +37,6 @@
 				point.noiseOffsetX += noiseStep;
 				point.noiseOffsetY += noiseStep;
 			}
-
 			requestAnimationFrame(animate);
 		});
 
@@ -74,25 +75,22 @@
 			return points;
 		}
 	});
-
-	let size = spring(10);
 </script>
 
-<svg
-	on:mousemove={(e) => coords.set({ x: e.clientX, y: e.clientY })}
-	on:mousedown={() => size.set(30)}
-	on:mouseup={() => size.set(10)}
-	in:fade={{ duration: 1000 }}
-	viewBox="0 0 200 200"
->
+<svg in:fade={{ duration: 1000 }} viewBox="0 0 200 200">
 	<defs>
 		<linearGradient id="gradient" gradientTransform="rotate(90)">
 			<stop id="gradientStop1" offset="0%" stop-color="var(--startColor)" />
 			<stop id="gradientStop2 " offset="100%" stop-color="var(--stopColor)" />
 		</linearGradient>
 	</defs>
-	<path bind:this={path} id="path" d="" fill="url('#gradient')" />
-	<circle cx={$coords.x} cy={$coords.y} r={$size} />
+	<path
+		on:mousemove={(e) => coords.set({ x: e.clientX, y: e.clientY })}
+		bind:this={path}
+		id="path"
+		d=""
+		fill="url('#gradient')"
+	/>
 </svg>
 
 <style>
@@ -103,12 +101,11 @@
 		width: 30vmin;
 		height: 30vmin;
 	}
-
-	circle {
-		fill: #ff3e00;
-	}
-
 	path {
 		fill: white;
+	}
+
+	circle {
+		fill: red;
 	}
 </style>
