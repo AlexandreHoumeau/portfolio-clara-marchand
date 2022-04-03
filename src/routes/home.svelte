@@ -17,7 +17,6 @@
 		color: #6e44ff;
 		font-family: 'Nightydemo';
 	}
-
   .sub {
     font-family: 'Wagon-bold';
     font-size: 70px;
