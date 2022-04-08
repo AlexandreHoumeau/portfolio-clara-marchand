@@ -77,7 +77,7 @@
 	});
 </script>
 
-<svg in:fade={{ duration: 1000 }} viewBox="0 0 200 200">
+<svg in:fade={{ duration: 300 }} viewBox="0 0 200 200">
 	<defs>
 		<linearGradient id="gradient" gradientTransform="rotate(90)">
 			<stop id="gradientStop1" offset="0%" stop-color="var(--startColor)" />
