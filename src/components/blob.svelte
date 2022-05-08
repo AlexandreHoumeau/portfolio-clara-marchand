@@ -23,8 +23,8 @@
 	let size = spring(10);
 	let path;
 	onMount(async () => {
-		let deviceWidth = (window.innerWidth > 0) ? window.innerWidth : screen.width;
-		let isMobile = deviceWidth <= 767
+		let deviceWidth = window.innerWidth > 0 ? window.innerWidth : screen.width;
+		let isMobile = deviceWidth <= 767;
 
 		let noiseStep = 0.001;
 
@@ -64,7 +64,7 @@
 			const points = [];
 			const numPoints = 6;
 			const angleStep = (Math.PI * 2) / numPoints;
-			const rad = isMobile ? 85 : 50;
+			const rad = isMobile ? 85 : 85;
 
 			for (let i = 1; i <= numPoints; i++) {
 				const theta = i * angleStep;
@@ -87,28 +87,26 @@
 	});
 </script>
 
-<div class="w-full">
-	<svg on:mousemove={onMouseMove} in:fade={{ duration: 300 }} viewBox="0 0 200 200">
-		<defs>
-			<linearGradient id="gradient" gradientTransform="rotate(90)">
-				<stop id="gradientStop1" offset="0%" stop-color="var(--startColor)" />
-				<stop id="gradientStop2 " offset="100%" stop-color="var(--stopColor)" />
-			</linearGradient>
-		</defs>
-		<path bind:this={path} id="path" d="" fill="url('#gradient')" />
-	</svg>
-</div>
+<svg on:mousemove={onMouseMove} in:fade={{ duration: 300 }} class="h-full w-full" viewBox="0 0 200 200">
+	<defs>
+		<linearGradient id="gradient" gradientTransform="rotate(90)">
+			<stop id="gradientStop1" offset="0%" stop-color="var(--startColor)" />
+			<stop id="gradientStop2 " offset="100%" stop-color="var(--stopColor)" />
+		</linearGradient>
+	</defs>
+	<path bind:this={path} id="path" d="" fill="url('#gradient')" />
+</svg>
 
 <style>
 	svg path {
-		position: absolute;
-		left: 0;
-		right: 0;
-		width: 30vmin;
-		height: 50vmin;
+		/* position: absolute; */
+		/* left: 0;
+		right: 0; */
+		/* width: 100%; */
+		/* height: 100%; */
 	}
 
 	path {
-		fill: white;
+		fill: #fff;
 	}
 </style>
