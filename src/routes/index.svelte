@@ -1,7 +1,7 @@
 <script>
 	import { onMount } from 'svelte';
 	import Home from './home.svelte';
-
+	import Projects from '../pages/Projects/index.svelte';
 	import { spring } from 'svelte/motion';
 
 	let coords = spring(
@@ -29,7 +29,6 @@
 </script>
 
 <div class="w-screen h-screen">
-
 	<div class="flex justify-center items-center h-full">
 		<div bind:this={loader} id="loader" class="w-0 h-px flex justify-center items-center">
 			{#if isVisible}
@@ -38,7 +37,7 @@
 		</div>
 	</div>
 </div>
-
+<Projects />
 <style>
 	#loader {
 		background-color: #6e44ff;
