@@ -7,7 +7,6 @@
 	src: url('/src/assets/fonts/Nightydemo.otf'); 
 }
 
-
 @font-face {
 	font-family: 'Wagon-extralight';
 	src: url('/src/assets/fonts/Wagon/Wagon-ExtraLight.otf'); 
@@ -18,3 +17,13 @@
 	src: url('/src/assets/fonts/Wagon/Wagon-Bold.otf'); 
 }
 
+
+@font-face {
+	font-family: 'Poppins-Regular';
+	src: url('/src/assets/fonts/Poppins/Poppins-Regular.ttf'); 
+}
+
+@font-face {
+	font-family: 'Poppins-Bold';
+	src: url('/src/assets/fonts/Poppins/Poppins-Bold.ttf'); 
+}
