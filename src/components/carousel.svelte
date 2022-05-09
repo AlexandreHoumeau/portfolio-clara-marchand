@@ -1,10 +1,11 @@
 <script>
+	import Icon from '../utils/Icon.svelte';
 	import { onMount } from 'svelte';
 
 	import { fly } from 'svelte/transition';
 	const src0 = 'static/mockups/AZ_HP.png';
 	const src1 = 'static/mockups/WT_HP.png';
-	const src2 = 'static/mockups/AZ_HP.png';
+	const src2 = 'static/mockups/SPLIT_HP.png';
 	let index = 0;
 
 	onMount(() => {
@@ -59,7 +60,10 @@
 				class="text-primary font-wg-bold leading-tight absolute -left-44 top-10"
 			>
 				Espace client <br /> Allianz France
-				<div class="text-xl font-pp-regular text-right">Découvrir</div>
+				<a href="/allianz" class="flex items-center justify-end">
+					<Icon name="arrow-right" />
+					<div class="text-xl font-pp-regular text-right">Découvrir</div>
+        </a>
 			</div>
 		{/if}
 
@@ -71,7 +75,10 @@
 				class="text-primary font-wg-bold leading-tight absolute -left-44 top-10"
 			>
 				Wizzer<br />Teacher
-				<div class="text-xl font-pp-regular text-right">Découvrir</div>
+				<div class="flex items-center justify-end">
+					<Icon name="arrow-right" />
+					<div class="text-xl font-pp-regular text-right">Découvrir</div>
+				</div>
 			</div>
 		{/if}
 
@@ -80,10 +87,13 @@
 				out:fly={{ x: -200, duration: 1000, delay: 300 }}
 				in:fly={{ x: 200, duration: 1000, delay: 1300 }}
 				id="allianz"
-				class="text-primary font-wg-bold leading-tight absolute -left-20 top-14"
+				class="text-primary font-wg-bold leading-tight absolute -left-20 top-32"
 			>
 				Split
-				<div class="text-xl font-pp-regular text-right">Découvrir</div>
+				<div class="flex items-center justify-end">
+					<Icon name="arrow-right" />
+					<div class="text-xl font-pp-regular text-right">Découvrir</div>
+				</div>
 			</div>
 		{/if}
 	</div>
