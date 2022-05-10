@@ -25,8 +25,8 @@
 	>
 		{#if index === 0}
 			<img
-				out:fly={{ x: -200, duration: 1000 }}
-				in:fly={{ x: 200, duration: 1000, delay: 1000 }}
+				out:fly|local={{ x: -200, duration: 1000 }}
+				in:fly|local={{ x: 200, duration: 1000, delay: 1000 }}
 				src={src0}
 				alt="allianz"
 				class="w-[900px] absolute"
@@ -34,7 +34,7 @@
 		{/if}
 		{#if index === 1}
 			<img
-				out:fly={{ x: -200, duration: 1000 }}
+				out:fly|local={{ x: -200, duration: 1000 }}
 				in:fly={{ x: 200, duration: 1000, delay: 1000 }}
 				src={src1}
 				alt="allianz"
@@ -43,7 +43,7 @@
 		{/if}
 		{#if index === 2}
 			<img
-				out:fly={{ x: -200, duration: 1000 }}
+				out:fly|local={{ x: -200, duration: 1000 }}
 				in:fly={{ x: 200, duration: 1000, delay: 1000 }}
 				src={src2}
 				alt="allianz"
@@ -54,22 +54,23 @@
 	<div class="relative col-span-2">
 		{#if index === 0}
 			<div
-				out:fly={{ x: -200, duration: 1000, delay: 300 }}
+				out:fly|local={{ x: -200, duration: 1000, delay: 300 }}
 				in:fly={{ x: 200, duration: 1000, delay: 1300 }}
 				id="allianz"
 				class="text-primary font-wg-bold leading-tight absolute -left-44 top-10"
 			>
 				Espace client <br /> Allianz France
-				<a href="/allianz" class="flex items-center justify-end">
+				<a href="allianz" sveltekit:prefetch class="flex items-center justify-end">
 					<Icon name="arrow-right" />
 					<div class="text-xl font-pp-regular text-right">Découvrir</div>
-        </a>
+				</a>
 			</div>
 		{/if}
 
 		{#if index === 1}
-			<div
-				out:fly={{ x: -200, duration: 1000, delay: 300 }}
+			<a
+				href="wizzer-teacher"
+				out:fly|local={{ x: -200, duration: 1000, delay: 300 }}
 				in:fly={{ x: 200, duration: 1000, delay: 1300 }}
 				id="allianz"
 				class="text-primary font-wg-bold leading-tight absolute -left-44 top-10"
@@ -79,12 +80,12 @@
 					<Icon name="arrow-right" />
 					<div class="text-xl font-pp-regular text-right">Découvrir</div>
 				</div>
-			</div>
+			</a>
 		{/if}
 
 		{#if index === 2}
 			<div
-				out:fly={{ x: -200, duration: 1000, delay: 300 }}
+				out:fly|local={{ x: -200, duration: 1000, delay: 300 }}
 				in:fly={{ x: 200, duration: 1000, delay: 1300 }}
 				id="allianz"
 				class="text-primary font-wg-bold leading-tight absolute -left-20 top-32"
