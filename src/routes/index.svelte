@@ -19,6 +19,9 @@
 		}, 1000);
 	});
 </script>
+<svelte:head>
+  <title>Clara Marchand</title>
+</svelte:head>
 
 <div class="w-screen h-screen">
 	<div class="flex justify-center items-center h-full">
