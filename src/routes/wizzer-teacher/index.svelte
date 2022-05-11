@@ -3,9 +3,13 @@
 	import { fly } from 'svelte/transition';
 	import AOS from 'aos';
 	import 'aos/dist/aos.css'; // You can also use <link> for styles
+	import SchemeUser from './schemeUser.svelte';
+	import SchemeAdmin from './schemeAdmin.svelte';
 
 	const banner = 'static/mockups/WT_contenu1.png';
 	const banner2 = 'static/mockups/WT_user.png';
+	const banner3 = 'static/mockups/WT_admin1.png';
+
 	let visible = true;
 
 	onMount(() => {
@@ -140,147 +144,59 @@
 			</div>
 		</div>
 
-		<div
-			class="flex items-center font-pp-regular justify-center mt-20 relative text-xs text-primary"
-		>
-			<div
-				data-aos="fade-right"
-				data-aos-duration="300"
-				class="shadow flex justify-center items-center lg:w-36 lg:h-16 text-center rounded"
-			>
-				connexion/<br />inscription
-			</div>
-			<div
-				data-aos="fade-right"
-				data-aos-duration="300"
-				data-aos-delay="100"
-				class="bg-primary h-px w-24"
-			/>
-
-			<div class="flex flex-col justify-center items-center">
-				<div
-					data-aos="fade-top"
-					data-aos-duration="300"
-					data-aos-delay="250"
-					class="shadow p-1 flex justify-center items-center lg:w-36 lg:h-16 text-center rounded"
-				>
-					utilisateurs
-				</div>
-				<div
-					data-aos="fade-top"
-					data-aos-duration="300"
-					data-aos-delay="200"
-					class="bg-primary h-24 w-px"
-				/>
-				<div
-					data-aos="fade-right"
-					data-aos-duration="300"
-					data-aos-delay="200"
-					class="shadow p-1 flex justify-center items-center lg:w-36 lg:h-16 text-center rounded"
-				>
-					home page
-				</div>
-				<div
-					data-aos="fade-top"
-					data-aos-duration="300"
-					data-aos-delay="200"
-					class="bg-primary h-24 w-px"
-				/>
-				<div
-					data-aos="fade-top"
-					data-aos-duration="300"
-					data-aos-delay="250"
-					class="shadow p-1 flex justify-center items-center lg:w-36 lg:h-16 text-center rounded"
-				>
-					compte
-				</div>
-			</div>
-
-			<div
-				data-aos="fade-right"
-				data-aos-duration="300"
-				data-aos-delay="300"
-				class="bg-primary h-px w-24"
-			/>
-
-			<div class="flex flex-col mt-auto items-center">
-				<div
-					data-aos="fade-right"
-					data-aos-duration="300"
-					data-aos-delay="400"
-					class="shadow p-1 flex justify-center items-center lg:w-36 lg:h-16 text-center rounded"
-				>
-					modules
-				</div>
-				<div
-					data-aos="fade-bottom"
-					data-aos-duration="300"
-					data-aos-delay="500"
-					class="bg-primary h-24 w-px"
-				/>
-				<div
-					data-aos="fade-bottom"
-					data-aos-duration="300"
-					data-aos-delay="600"
-					class="shadow p-1 flex justify-center items-center lg:w-36 lg:h-16 text-center rounded"
-				>
-					cours
-				</div>
-			</div>
-
-			<div
-				data-aos="fade-right"
-				data-aos-duration="300"
-				data-aos-delay="700"
-				class="bg-primary h-px w-24"
-			/>
-
-			<div class="flex flex-col mt-auto items-center">
-				<div
-					data-aos="fade-right"
-					data-aos-duration="300"
-					data-aos-delay="800"
-					class="shadow p-1 flex justify-center items-center lg:w-36 lg:h-16 text-center mr-auto rounded"
-				>
-					exercices
-				</div>
-				<div
-					data-aos="fade-bottom"
-					data-aos-duration="300"
-					data-aos-delay="900"
-					class="bg-primary h-24 w-px mr-auto ml-16"
-				/>
-				<div class="flex items-center">
-					<div
-						data-aos="fade-right"
-						data-aos-duration="300"
-						data-aos-delay="1000"
-						class="shadow p-1 flex justify-center items-center lg:w-36 lg:h-16 text-center rounded"
-					>
-						battles
-					</div>
-					<div
-						data-aos="fade-right"
-						data-aos-duration="300"
-						data-aos-delay="1000"
-						class="bg-primary h-px w-20"
-					/>
-					<div
-						data-aos="fade-right"
-						data-aos-duration="300"
-						data-aos-delay="1200"
-						class="shadow p-1 flex justify-center items-center lg:w-36 lg:h-16 text-center rounded"
-					>
-						battles
-					</div>
-				</div>
-			</div>
-		</div>
+		<SchemeUser />
 	</div>
 
 	<div class="bg-secondary lg:relative h-full justify-center items-center w-full">
 		<div class="flex justify-center">
 			<img src={banner2} class="w-full lg:w-[1500px]" alt="banner" />
+		</div>
+	</div>
+
+	<div
+		class="lg:grid grid-cols-2 gap-10 font-pp-regular items-center text-justify mx-4 my-20 lg:mx-20 text-primary"
+	>
+		<div data-aos="fade-right" data-aos-duration="300">
+			Le bootcamper accède à différents modules dans lesquels se trouvent des cours et des exercices
+			qu’il peut effectuer.<br /> Il participe également à des battles créées par l’admin et s’en suit
+			un classement.
+		</div>
+
+		<div class="lg:mt-0 mt-10" data-aos="fade-left" data-aos-duration="300">
+			Le bootcamper accède au classement de la battle à laquelle il a participé.<br /> Il a également
+			accès à une partie profil dans laquelle il peut personnaliser ses informations personnelles.
+		</div>
+	</div>
+
+	<div class="my-40">
+		<div class="flex justify-end items-top gap-4">
+			<div data-aos="fade-left" data-aos-duration="600" class="text-primary text-xl lg:text-5xl">
+				<div class="font-wg-bold">Utilisateurs admin</div>
+				<div class="font-wg-light text-left">dans les grandes lignes</div>
+			</div>
+			<div data-aos="fade-left" data-aos-duration="600" class="h-px w-1/6 bg-primary mt-4" />
+		</div>
+		<SchemeAdmin />
+	</div>
+
+	<div class="bg-secondary lg:relative h-full justify-center items-center w-full">
+		<div class="flex justify-center">
+			<img src={banner3} class="w-full lg:w-[1500px]" alt="banner" />
+		</div>
+	</div>
+
+	<div
+		class="lg:grid grid-cols-2 gap-10 font-pp-regular items-center text-justify mx-4 my-20 lg:mx-20 text-primary"
+	>
+		<div data-aos="fade-right" data-aos-duration="300">
+			Le bootcamper accède à différents modules dans lesquels se trouvent des cours et des exercices
+			qu’il peut effectuer. Il participe également à des battles créées par l’admin et s’en suit un
+			classement.
+		</div>
+
+		<div class="lg:mt-0 mt-10" data-aos="fade-left" data-aos-duration="300">
+			Le bootcamper accède au classement de la battle à laquelle il a participé.<br />
+			Il a également accès à une partie profil dans laquelle il peut personnaliser ses informations personnelles.
 		</div>
 	</div>
 </div>
