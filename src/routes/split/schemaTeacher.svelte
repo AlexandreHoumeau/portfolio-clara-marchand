@@ -1,0 +1,170 @@
+<div class="justify-center flex">
+	<div
+		class="lg:flex hidden items-center font-pp-regular justify-center mt-20 relative text-xs text-primary"
+	>
+		<div
+			data-aos="fade-right"
+			data-aos-duration="300"
+			class="shadow flex justify-center items-center lg:w-36 lg:h-16 text-center rounded"
+		>
+			connexion/<br />inscription
+		</div>
+		<div
+			data-aos="fade-right"
+			data-aos-duration="300"
+			data-aos-delay="100"
+			class="bg-primary h-px w-24"
+		/>
+		<div class="flex relative flex-col items-center">
+			<div class="absolute flex -top-2 -left-20 items-center">
+				<div
+					data-aos="fade-top"
+					data-aos-duration="300"
+					data-aos-delay="250"
+					class="shadow mr-4 p-1 flex justify-center items-center lg:w-36 lg:h-16 text-center rounded"
+				>
+					réglages
+				</div>
+				<div
+					data-aos="fade-top"
+					data-aos-duration="300"
+					data-aos-delay="250"
+					class="shadow p-1 flex justify-center items-center lg:w-36 lg:h-16 text-center rounded"
+				>
+					espace
+				</div>
+				<div
+					data-aos="fade-right"
+					data-aos-duration="300"
+					data-aos-delay="100"
+					class="bg-primary h-px w-24"
+				/>
+				<div
+					data-aos="fade-top"
+					data-aos-duration="300"
+					data-aos-delay="250"
+					class="shadow p-1 flex justify-center items-center lg:w-36 lg:h-16 text-center rounded"
+				>
+					cours reservés
+				</div>
+				<div
+					data-aos="fade-right"
+					data-aos-duration="300"
+					data-aos-delay="100"
+					class="bg-primary h-px w-24"
+				/>
+				<div
+					data-aos="fade-top"
+					data-aos-duration="300"
+					data-aos-delay="250"
+					class="shadow p-1 flex justify-center items-center lg:w-36 lg:h-16 text-center rounded"
+				>
+					annulation
+				</div>
+			</div>
+			<div class="h-14" />
+			<div class="flex gap-28">
+				<div
+					data-aos="fade-top"
+					data-aos-duration="300"
+					data-aos-delay="200"
+					class="bg-primary h-24 w-px"
+				/>
+				<div
+					data-aos="fade-top"
+					data-aos-duration="300"
+					data-aos-delay="200"
+					class="bg-primary h-24 w-px"
+				/>
+			</div>
+			<div
+				data-aos="fade-right"
+				data-aos-duration="300"
+				data-aos-delay="200"
+				class="shadow p-1 flex justify-center items-center lg:w-36 lg:h-16 text-center rounded"
+			>
+				home page
+			</div>
+			<div class="mb-40 relative ">
+				<div class="absolute -left-40">
+					<div
+						data-aos="fade-top"
+						data-aos-duration="300"
+						data-aos-delay="200"
+						class="bg-primary ml-auto mr-10 h-24 w-px"
+					/>
+					<div
+						data-aos="fade-top"
+						data-aos-duration="300"
+						data-aos-delay="250"
+						class="shadow p-1 flex justify-center items-center lg:w-36 lg:h-16 text-center rounded"
+					>
+						messagerie
+					</div>
+				</div>
+
+				<div class="absolute -left-0">
+					<div
+						data-aos="fade-top"
+						data-aos-duration="300"
+						data-aos-delay="200"
+						class="bg-primary h-24 ml-14 w-px"
+					/>
+					<div class="flex items-center">
+						<div
+							data-aos="fade-top"
+							data-aos-duration="300"
+							data-aos-delay="250"
+							class="shadow p-1 flex justify-center items-center lg:w-36 lg:h-16 text-center rounded"
+						>
+							cours
+						</div>
+						<div
+							data-aos="fade-right"
+							data-aos-duration="300"
+							data-aos-delay="300"
+							class="bg-primary h-px w-24"
+						/>
+						<div
+							data-aos="fade-top"
+							data-aos-duration="300"
+							data-aos-delay="250"
+							class="shadow p-1 flex justify-center items-center lg:w-36 lg:h-16 text-center rounded"
+						>
+							gestion des cours
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div
+			data-aos="fade-right"
+			data-aos-duration="300"
+			data-aos-delay="300"
+			class="bg-primary h-px w-24"
+		/>
+		<div
+			data-aos="fade-right"
+			data-aos-duration="300"
+			data-aos-delay="400"
+			class="shadow p-1 flex justify-center items-center lg:w-36 lg:h-16 text-center rounded"
+		>
+			fiche formateur
+		</div>
+
+		<div
+			data-aos="fade-right"
+			data-aos-duration="300"
+			data-aos-delay="700"
+			class="bg-primary h-px w-24"
+		/>
+		<div
+			data-aos="fade-right"
+			data-aos-duration="300"
+			data-aos-delay="800"
+			class="shadow p-1 flex justify-center items-center lg:w-36 lg:h-16 text-center mr-auto rounded"
+		>
+			réservation cours
+		</div>
+	</div>
+</div>
