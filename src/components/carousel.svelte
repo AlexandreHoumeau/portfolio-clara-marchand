@@ -53,22 +53,25 @@
 	</div>
 	<div class="relative col-span-2">
 		{#if index === 0}
-			<div
+			<a
+				href="allianz"
+				sveltekit:reload
 				out:fly|local={{ x: -200, duration: 1000, delay: 300 }}
 				in:fly={{ x: 200, duration: 1000, delay: 1300 }}
 				id="allianz"
 				class="text-primary font-wg-bold leading-tight absolute -left-44 top-10"
 			>
 				Espace client <br /> Allianz France
-				<a href="allianz" sveltekit:prefetch class="flex items-center justify-end">
+				<div class="flex items-center justify-end">
 					<Icon name="arrow-right" />
 					<div class="text-xl font-pp-regular text-right">Découvrir</div>
-				</a>
-			</div>
+				</div>
+			</a>
 		{/if}
 
 		{#if index === 1}
 			<a
+				sveltekit:reload
 				href="wizzer-teacher"
 				out:fly|local={{ x: -200, duration: 1000, delay: 300 }}
 				in:fly={{ x: 200, duration: 1000, delay: 1300 }}
@@ -84,8 +87,9 @@
 		{/if}
 
 		{#if index === 2}
-			<div
-				out:fly|local={{ x: -200, duration: 1000, delay: 300 }}
+		<a
+		sveltekit:reload
+		href="split"				out:fly|local={{ x: -200, duration: 1000, delay: 300 }}
 				in:fly={{ x: 200, duration: 1000, delay: 1300 }}
 				id="allianz"
 				class="text-primary font-wg-bold leading-tight absolute -left-20 top-32"
@@ -95,7 +99,7 @@
 					<Icon name="arrow-right" />
 					<div class="text-xl font-pp-regular text-right">Découvrir</div>
 				</div>
-			</div>
+			</a>
 		{/if}
 	</div>
 </div>
