@@ -5,8 +5,8 @@
 </script>
 
 {#key url}
-  <div in:fly={{  x:-5, duration: pageTransitionDuration, delay: pageTransitionDuration }}
-    out:fly|local={{ x: 5, duration: pageTransitionDuration }}>
+  <div in:fly={{  x:-500, duration: pageTransitionDuration, delay: pageTransitionDuration }}
+    out:fly|local={{ x: 500, duration: pageTransitionDuration }}>
     <slot />
   </div>
 {/key}
