@@ -32,76 +32,69 @@
 {#if menuIsOpen}
 	<div
 		in:fly={{ y: 200, duration: 1000 }}
-		out:fly|local={{ y: 200, duration: 1000, delay: 900 }}
-		class="bg-primary"
+		out:fly|local={{ y: 200, duration: 1000 }}
+		class="bg-primary grid grid-cols-2"
 	>
-		{#if !projectIsVisible}
-			<div class="font-wg-bold flex items-center text-white text-8xl h-[100vh] w-full ">
+		<div class="font-wg-bold flex items-center text-white text-7xl  w-full ">
+			{#if projectIsVisible}
 				<div class="space-y-24 w-full ">
+					<div in:fly={{ x: -400, duration: 1000 }} out:fly={{ x: -400, duration: 1000 }} class="flex items-center justify-start gap-4">
+						<div class="h-1 w-4/12 bg-white" />
+						<div class="">Allianz</div>
+					</div>
+
+					<div in:fly={{ x: -400, duration: 1000, delay: 300 }} out:fly={{ x: -400, duration: 1000, delay: 300 }} class="flex items-center justify-start gap-4">
+						<div class="h-1 w-4/12 bg-white" />
+						<div class="">Wizzer Teacher</div>
+					</div>
+
+					<div in:fly={{ x: -400, duration: 1000, delay: 600 }} out:fly={{ x: -400, duration: 1000, delay: 600 }} class="flex items-center justify-start gap-4">
+						<div class="h-1 w-4/12 bg-white" />
+						<div class="">Split</div>
+					</div>
+				</div>
+			{/if}
+		</div>
+
+		<div class="font-wg-bold flex items-center text-white text-8xl h-[100vh] w-full ">
+			<div class="space-y-24 w-full ">
+				{#if !projectIsVisible}
 					<div
 						out:fly|local={{ x: 400, duration: 1000 }}
-						in:fly={{ x: 400, duration: 1000, delay: 300 }}
+						in:fly={{ x: 400, duration: 1000 }}
 						class="flex items-center justify-end gap-10"
 					>
 						<div>Home</div>
 						<div class="h-1 w-5/12 bg-white" />
 					</div>
+				{/if}
+				<div
+					on:click={toggleProjects}
+					out:fly|local={{ x: 400, duration: 1000 }}
+					in:fly={{ x: 400, duration: 1000 }}
+					class="flex items-center justify-end gap-10"
+				>
+					<div class="{projectIsVisible && 'text-5xl'} transition-all duration-1000">Projets</div>
 					<div
-						on:click={toggleProjects}
-						out:fly|local={{ x: 400, duration: 1000, delay: 300 }}
-						in:fly={{ x: 400, duration: 1000, delay: 600 }}
+						class="h-1 transition-all duration-1000 {projectIsVisible
+							? 'w-2/12'
+							: 'w-5/12'} bg-white"
+					/>
+				</div>
+				{#if !projectIsVisible}
+					<div
+						out:fly|local={{ x: 400, duration: 1000 }}
+						in:fly={{ x: 400, duration: 1000 }}
 						class="flex items-center justify-end gap-10"
 					>
-						<div>Projets</div>
+						<div class="{projectIsVisible && 'text-5xl'} transition-all duration-1000">
+							À propos
+						</div>
 						<div class="h-1 w-5/12 bg-white" />
 					</div>
-					<div
-						out:fly|local={{ x: 400, duration: 1000, delay: 600 }}
-						in:fly={{ x: 400, duration: 1000, delay: 900 }}
-						class="flex items-center justify-end gap-10"
-					>
-						<div>À propos</div>
-						<div class="h-1 w-5/12 bg-white" />
-					</div>
-				</div>
+				{/if}
 			</div>
-		{:else}
-			<div class="font-wg-bold grid grid-cols-2 items-center text-white text-8xl h-[100vh] w-full ">
-				<div class="space-y-24 w-full ">
-					<div in:fly={{ x: -400, duration: 1000, delay: 1500 }} class="flex items-center justify-start gap-10">
-						<div class="h-1 w-4/12 bg-white" />
-						<div class="text-8xl">Projets</div>
-					</div>
-				</div>
-				<div class="space-y-24 text-5xl w-full ">
-					<div
-						out:fly={{ x: 400, duration: 1000 }}
-						in:fly={{ x: 400, duration: 1000, delay: 1800 }}
-						class="flex items-center justify-end gap-10"
-					>
-						<div>Allianz</div>
-						<div class="h-1 w-3/12 bg-white" />
-					</div>
-					<div
-						on:click={toggleProjects}
-						out:fly={{ x: 400, duration: 1000, delay: 300 }}
-						in:fly={{ x: 400, duration: 1000, delay: 2200 }}
-						class="flex items-center justify-end gap-10"
-					>
-						<div>Wizzer Teacher</div>
-						<div class="h-1 w-3/12 bg-white" />
-					</div>
-					<div
-						out:fly={{ x: 400, duration: 1000, delay: 600 }}
-						in:fly={{ x: 400, duration: 1000, delay: 2500 }}
-						class="flex items-center justify-end gap-10"
-					>
-						<div>Split</div>
-						<div class="h-1 w-3/12 bg-white" />
-					</div>
-				</div>
-			</div>
-		{/if}
+		</div>
 	</div>
 {:else}
 	<Transition>
