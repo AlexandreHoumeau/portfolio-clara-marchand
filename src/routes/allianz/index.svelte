@@ -7,8 +7,6 @@
 	const banner = 'static/mockups/AZ_contenu.png';
 	let visible = true;
 	onMount(() => {
-		let deviceHeihgt = window.innerHeight > 0 ? window.innerHeight : screen.height;
-
 		AOS.init();
 
 		setTimeout(() => {
@@ -29,10 +27,10 @@
 
 	<div class="lg:mt-40 hidden lg:flex justify-center relative text-primary font-pp-regular">
 		{#if visible}
-			<div
-				transition:fly={{ x: 2000, duration: 5000, opacity: 1 }}
-				class="bg-white slidein z-10 w-full -top-0 h-5 absolute"
-			/>
+			<!-- <div
+				in:fly|local={{ x: 2000, duration: 5000, opacity: 1 }}
+				class="bg-white z-10 w-full -top-0 h-5 absolute"
+			/> -->
 		{:else}
 			<div class="flex absolute bottom-4 justify-around w-3/4">
 				<div in:fly={{ x: -200, delay: 500, duration: 1000 }} class="">
