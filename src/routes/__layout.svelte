@@ -1,6 +1,11 @@
 <!-- __layout.svelte -->
 <script context="module">
+	import { goto } from '$app/navigation';
+	import AOS from 'aos';
+	import 'aos/dist/aos.css';
+	import { onMount } from 'svelte';
 	import '../app.css';
+	import Transition from '../components/Transition.svelte';
 	export const load = async ({ url }) => ({
 		props: {
 			key: url
@@ -9,9 +14,6 @@
 </script>
 
 <script>
-	import { fly } from 'svelte/transition';
-	import Transition from '../components/Transition.svelte';
-	import { goto } from '$app/navigation';
 	export let key;
 	let menuIsOpen = false;
 	let projectIsVisible = false;
@@ -29,13 +31,21 @@
 		menuIsOpen = false;
 		goto(path);
 	};
+
+	onMount(() => {
+		AOS.init({
+			// Global settings:
+			startEvent: 'DOMContentLoaded' // name of the event dispatched on the document, that AOS should initialize on
+		});
+	});
 </script>
 
 <nav class="fixed font-pp-bold text-3xl top-10 z-50 right-20">
-	<div on:click={toggleMenu}>{menuIsOpen ? 'Fermer' : ' Menu'}</div>
+	<!-- <div on:click={toggleMenu}>{menuIsOpen ? 'Fermer' : ' Menu'}</div> -->
+	<a href="/menu">{menuIsOpen ? 'Fermer' : ' Menu'}</a>
 </nav>
 
-{#if menuIsOpen}
+<!-- {#if menuIsOpen}
 	<div
 		in:fly={{ y: 200, duration: 300 }}
 		out:fly|local={{ y: 200, duration: 300 }}
@@ -121,8 +131,8 @@
 			</div>
 		</div>
 	</div>
-{:else}
-	<Transition>
-		<slot />
-	</Transition>
-{/if}
+{:else} -->
+<Transition>
+	<slot />
+</Transition>
+<!-- {/if} -->
