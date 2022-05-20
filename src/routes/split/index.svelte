@@ -15,13 +15,15 @@
 
 	let visible = true;
 
-	onMount(() => {
-		AOS.init();
+	// onMount(() => {
+		AOS.init({
+			startEvent: 'load'
+		});
 
 		setTimeout(() => {
 			visible = false;
 		}, 300);
-	});
+	// });
 </script>
 
 <svelte:head>
