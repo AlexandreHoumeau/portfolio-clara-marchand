@@ -1,23 +1,33 @@
 <script>
-	import { onMount } from 'svelte';
-	import { fly } from 'svelte/transition';
 	import AOS from 'aos';
-	import 'aos/dist/aos.css'; // You can also use <link> for styles
+
+	import { onMount, onDestroy } from 'svelte';
+	import { fly } from 'svelte/transition';
 
 	const banner = 'static/mockups/AZ_contenu.png';
 	let visible = true;
+	AOS.init({
+		
+	})
 	onMount(() => {
-		AOS.init();
 
 		setTimeout(() => {
 			visible = false;
 		}, 300);
 	});
+
+	onDestroy(() => {
+		visible = true;
+	});
 </script>
 
-<div class="overflow-hidden">
+<div class="overflow-hidden h-[200vh]">
 	<div class="bg-secondary lg:relative lg:h-[493px] justify-center items-center w-full">
-		<h1 class="text-primary font-nighty absolute lg:top-10 left-2 lg:left-10 text-3xl lg:text-6xl">
+		<h1
+			class="text-primary font-nighty absolute lg:top-10 left-2 lg:left-10 text-3xl lg:text-6xl"
+			data-aos="slide-right"
+			data-aos-duration="1000"
+		>
 			Allianz France
 		</h1>
 		<div class="flex justify-center">
@@ -27,10 +37,10 @@
 
 	<div class="lg:mt-40 hidden lg:flex justify-center relative text-primary font-pp-regular">
 		{#if visible}
-			<!-- <div
-				in:fly|local={{ x: 2000, duration: 5000, opacity: 1 }}
-				class="bg-white z-10 w-full -top-0 h-5 absolute"
-			/> -->
+			<div
+				out:fly={{ x: 2000, duration: 5000, opacity: 1 }}
+				class="bg-white slidein z-10 w-full -top-0 h-5 absolute"
+			/>
 		{:else}
 			<div class="flex absolute bottom-4 justify-around w-3/4">
 				<div in:fly={{ x: -200, delay: 500, duration: 1000 }} class="">
