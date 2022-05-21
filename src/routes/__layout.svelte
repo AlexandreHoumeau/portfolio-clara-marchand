@@ -33,9 +33,11 @@
 	};
 
 	onMount(() => {
-		AOS.init({
-			// Global settings:
-			startEvent: 'DOMContentLoaded' // name of the event dispatched on the document, that AOS should initialize on
+		AOS.init();
+
+		window.addEventListener('locationchange', function () {
+			AOS.refresh()
+			console.log('url changed')
 		});
 	});
 </script>
