@@ -4,6 +4,7 @@
 	import AOS from 'aos';
 	import 'aos/dist/aos.css';
 	import { onMount } from 'svelte';
+	import { fly } from 'svelte/transition';
 	import '../app.css';
 	import Transition from '../components/Transition.svelte';
 	export const load = async ({ url }) => ({
@@ -38,14 +39,14 @@
 </script>
 
 <nav class="fixed font-pp-bold text-3xl top-10 z-50 right-20">
-	<!-- <div on:click={toggleMenu}>{menuIsOpen ? 'Fermer' : ' Menu'}</div> -->
-	<a href="/menu">{menuIsOpen ? 'Fermer' : ' Menu'}</a>
+	<div on:click={toggleMenu}>{menuIsOpen ? 'Fermer' : ' Menu'}</div>
+	<!-- <a href="/menu">{menuIsOpen ? 'Fermer' : ' Menu'}</a> -->
 </nav>
 
-<!-- {#if menuIsOpen}
+{#if menuIsOpen}
 	<div
 		in:fly={{ y: 200, duration: 300 }}
-		out:fly|local={{ y: 200, duration: 300 }}
+
 		class="bg-primary grid grid-cols-2"
 	>
 		<div class="font-wg-bold flex items-center text-white text-7xl  w-full ">
@@ -53,8 +54,6 @@
 				<div class="space-y-24 w-full ">
 					<div
 						on:click={() => choosProject('allianz')}
-						in:fly={{ x: -400, duration: 1000 }}
-						out:fly|local={{ x: -400, duration: 1000 }}
 						class="flex items-center justify-start gap-4"
 					>
 						<div class="h-1 w-4/12 bg-white" />
@@ -72,7 +71,7 @@
 					</div>
 
 					<div
-            on:click={() => choosProject('split')}
+						on:click={() => choosProject('split')}
 						in:fly={{ x: -400, duration: 1000, delay: 600 }}
 						out:fly|local={{ x: -400, duration: 1000, delay: 600 }}
 						class="flex items-center justify-start gap-4"
@@ -98,12 +97,7 @@
 						<div class="h-1 w-5/12 bg-white" />
 					</a>
 				{/if}
-				<div
-					on:click={toggleProjects}
-					out:fly|local={{ x: 400, duration: 1000 }}
-					in:fly={{ x: 400, duration: 1000 }}
-					class="flex items-center justify-end gap-10"
-				>
+				<div on:click={toggleProjects} class="flex items-center justify-end gap-10">
 					<div class="{projectIsVisible && 'text-5xl'} transition-all duration-1000">Projets</div>
 					<div
 						class="h-1 transition-all duration-1000 {projectIsVisible
@@ -128,8 +122,8 @@
 			</div>
 		</div>
 	</div>
-{:else} -->
-<Transition>
-	<slot />
-</Transition>
-<!-- {/if} -->
+{:else}
+	<Transition>
+		<slot />
+	</Transition>
+{/if}
