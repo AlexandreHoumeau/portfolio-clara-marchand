@@ -6,11 +6,9 @@
 
 	const banner = 'static/mockups/AZ_contenu.png';
 	let visible = true;
-	AOS.init({
-		
-	})
-	onMount(() => {
 
+	onMount(() => {
+		AOS.refreshHard()
 		setTimeout(() => {
 			visible = false;
 		}, 300);
