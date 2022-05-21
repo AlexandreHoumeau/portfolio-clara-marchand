@@ -22,8 +22,7 @@
 </script>
 
 <div
-	in:fly={{ y: 200, duration: 300 }}
-	out:fly|local={{ y: -200, duration: 300 }}
+
 	class="bg-primary grid grid-cols-2"
 >
 	<div class="font-wg-bold flex items-center text-white text-7xl  w-full ">
@@ -32,8 +31,7 @@
 				<a
 					href="allianz"
 					sveltekit:reload
-					out:fly|local={{ x: -200, duration: 1000, delay: 300 }}
-					in:fly={{ x: -400, duration: 1000 }}
+
 					class="flex items-center justify-start gap-4"
 				>
 					<div class="h-1 w-4/12 bg-white" />
@@ -79,8 +77,7 @@
 			{/if}
 			<div
 				on:click={toggleProjects}
-				out:fly|local={{ x: 400, duration: 1000 }}
-				in:fly={{ x: 400, duration: 1000 }}
+				
 				class="flex items-center justify-end gap-10"
 			>
 				<div class="{projectIsVisible && 'text-5xl'} transition-all duration-1000">Projets</div>
