@@ -34,11 +34,6 @@
 
 	onMount(() => {
 		AOS.init();
-
-		window.addEventListener('locationchange', function () {
-			AOS.refresh()
-			console.log('url changed')
-		});
 	});
 </script>
 
