@@ -19,7 +19,7 @@
 	});
 </script>
 
-<div class="overflow-hidden h-[200vh]">
+<div class="overflow-hidden ">
 	<div class="bg-secondary lg:relative lg:h-[493px] justify-center items-center w-full">
 		<h1
 			class="text-primary font-nighty absolute lg:top-10 left-2 lg:left-10 text-3xl lg:text-6xl"
