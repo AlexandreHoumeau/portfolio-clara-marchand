@@ -21,19 +21,11 @@
 	};
 </script>
 
-<div
-
-	class="bg-primary grid grid-cols-2"
->
+<div class="bg-primary grid grid-cols-2">
 	<div class="font-wg-bold flex items-center text-white text-7xl  w-full ">
 		{#if projectIsVisible}
 			<div class="space-y-24 w-full ">
-				<a
-					href="allianz"
-					sveltekit:reload
-
-					class="flex items-center justify-start gap-4"
-				>
+				<a href="allianz" sveltekit:reload class="flex items-center justify-start gap-4">
 					<div class="h-1 w-4/12 bg-white" />
 					<div class="">Allianz</div>
 				</a>
@@ -75,11 +67,7 @@
 					<div class="h-1 w-5/12 bg-white" />
 				</a>
 			{/if}
-			<div
-				on:click={toggleProjects}
-				
-				class="flex items-center justify-end gap-10"
-			>
+			<div on:click={toggleProjects} class="flex items-center justify-end gap-10">
 				<div class="{projectIsVisible && 'text-5xl'} transition-all duration-1000">Projets</div>
 				<div
 					class="h-1 transition-all duration-1000 {projectIsVisible ? 'w-2/12' : 'w-5/12'} bg-white"
