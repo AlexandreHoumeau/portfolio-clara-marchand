@@ -1,6 +1,5 @@
 <!-- __layout.svelte -->
 <script context="module">
-	import { goto } from '$app/navigation';
 	import AOS from 'aos';
 	import 'aos/dist/aos.css';
 	import { onMount } from 'svelte';
@@ -30,7 +29,6 @@
 	const choosProject = () => {
 		projectIsVisible = false;
 		menuIsOpen = false;
-		// goto(path);
 	};
 
 	onMount(() => {
