@@ -1,5 +1,5 @@
 <script>
-	import { onMount } from 'svelte';
+	import { onDestroy, onMount } from 'svelte';
 	import { fly } from 'svelte/transition';
 	import AOS from 'aos';
 	import 'aos/dist/aos.css'; // You can also use <link> for styles
@@ -13,12 +13,14 @@
 	let visible = true;
 
 	onMount(() => {
-		let deviceHeihgt = window.innerHeight > 0 ? window.innerHeight : screen.height;
-		AOS.init();
-
-		setTimeout(() => {
+		// let deviceHeihgt = window.innerHeight > 0 ? window.innerHeight : screen.height;
+		const interval = setInterval(() => {
 			visible = false;
-		}, 300);
+		}, 1500);
+		return () => {
+			clearInterval(interval);
+			visible = true;
+		};
 	});
 </script>
 
@@ -28,10 +30,19 @@
 
 <div class="overflow-hidden">
 	<div class="bg-secondary lg:relative lg:h-[493px] justify-center items-center w-full">
-		<h1 class="text-primary font-nighty absolute lg:top-10 left-2 lg:left-10 text-3xl lg:text-6xl">
+		<h1
+			data-aos="fade-up"
+			data-aos-duration="1000"
+			class="text-primary font-nighty absolute lg:top-10 left-2 lg:left-10 text-3xl lg:text-6xl"
+		>
 			Wizzer Teacher
 		</h1>
-		<div class="flex justify-center">
+		<div
+			data-aos="fade-up"
+			data-aos-delay="300"
+			data-aos-duration="2000"
+			class="flex justify-center"
+		>
 			<img src={banner} class="lg:absolute -top-10 w-full lg:w-[1529px]" alt="banner" />
 		</div>
 	</div>

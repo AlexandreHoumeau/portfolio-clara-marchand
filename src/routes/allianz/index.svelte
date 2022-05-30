@@ -8,7 +8,7 @@
 	let visible = true;
 
 	onMount(() => {
-		AOS.refreshHard()
+		AOS.refreshHard();
 		setTimeout(() => {
 			visible = false;
 		}, 300);
@@ -23,12 +23,17 @@
 	<div class="bg-secondary lg:relative lg:h-[493px] justify-center items-center w-full">
 		<h1
 			class="text-primary font-nighty absolute lg:top-10 left-2 lg:left-10 text-3xl lg:text-6xl"
-			data-aos="slide-right"
+			data-aos="fade-up"
 			data-aos-duration="1000"
 		>
 			Allianz France
 		</h1>
-		<div class="flex justify-center">
+		<div
+			data-aos="fade-up"
+			data-aos-delay="300"
+			data-aos-duration="2000"
+			class="flex justify-center"
+		>
 			<img src={banner} class="lg:absolute -top-10 w-full lg:w-[1529px]" alt="banner" />
 		</div>
 	</div>
@@ -36,7 +41,7 @@
 	<div class="lg:mt-40 hidden lg:flex justify-center relative text-primary font-pp-regular">
 		{#if visible}
 			<div
-				out:fly={{ x: 2000, duration: 5000, opacity: 1 }}
+				transition:fly={{ x: 2000, duration: 5000, opacity: 1 }}
 				class="bg-white slidein z-10 w-full -top-0 h-5 absolute"
 			/>
 		{:else}
