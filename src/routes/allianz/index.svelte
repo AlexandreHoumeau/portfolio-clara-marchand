@@ -4,7 +4,7 @@
 	import { onMount, onDestroy } from 'svelte';
 	import { fly } from 'svelte/transition';
 
-	const banner = 'static/mockups/AZ_contenu.png';
+	const banner = '/mockups/AZ_contenu.png';
 	let visible = true;
 
 	onMount(() => {

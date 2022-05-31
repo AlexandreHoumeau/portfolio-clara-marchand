@@ -6,9 +6,9 @@
 	import SchemeUser from './schemeUser.svelte';
 	import SchemeAdmin from './schemeAdmin.svelte';
 
-	const banner = 'static/mockups/WT_contenu1.png';
-	const banner2 = 'static/mockups/WT_user.png';
-	const banner3 = 'static/mockups/WT_admin1.png';
+	const banner = '/mockups/WT_contenu1.png';
+	const banner2 = '/mockups/WT_user.png';
+	const banner3 = '/mockups/WT_admin1.png';
 
 	let visible = true;
 

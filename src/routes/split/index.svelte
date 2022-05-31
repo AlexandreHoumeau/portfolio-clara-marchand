@@ -7,11 +7,11 @@
 	import SchemaTeacher from './schemaTeacher.svelte';
 	import SchemaMobile from './schemaMobile.svelte';
 
-	const banner = 'static/mockups/SPLIT_contenu.png';
-	const banner2 = 'static/mockups/SPLIT_contenu1.png';
-	const banner3 = 'static/mockups/SPLIT_contenu2.png';
-	const banner4 = 'static/mockups/SPLIT_mobile1.png';
-	const banner5 = 'static/mockups/SPLIT_mobile.png';
+	const banner = '/mockups/SPLIT_contenu.png';
+	const banner2 = '/mockups/SPLIT_contenu1.png';
+	const banner3 = '/mockups/SPLIT_contenu2.png';
+	const banner4 = '/mockups/SPLIT_mobile1.png';
+	const banner5 = '/mockups/SPLIT_mobile.png';
 
 	let visible = true;
 
