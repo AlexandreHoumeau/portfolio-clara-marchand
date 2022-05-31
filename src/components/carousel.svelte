@@ -27,7 +27,7 @@
 			<img
 				out:fly|local={{ x: -200, duration: 1000 }}
 				in:fly|local={{ x: 200, duration: 1000, delay: 1000 }}
-				src="static/mockups/AZ_HP.png"
+				src='/mockups/AZ_HP.png'
 				alt="allianz"
 				class="w-[900px] absolute"
 			/>
