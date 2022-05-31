@@ -14,6 +14,8 @@
 </script>
 
 <script>
+	import { goto } from '$app/navigation';
+
 	export let key;
 	let menuIsOpen = false;
 	let projectIsVisible = false;
@@ -26,7 +28,8 @@
 		projectIsVisible = !projectIsVisible;
 	};
 
-	const choosProject = () => {
+	const choosProject = async (path) => {
+		await goto(path);
 		projectIsVisible = false;
 		menuIsOpen = false;
 	};
@@ -48,37 +51,31 @@
 		<div class="font-wg-bold flex items-center text-white text-lg lg:text-7xl  w-full ">
 			{#if projectIsVisible}
 				<div class="space-y-24 w-full ">
-					<a
-						on:click={choosProject}
-						href="/allianz"
-						sveltekit:reload
+					<div
+						on:click={() => choosProject('/allianz')}
 						class="flex cursor-pointer items-center justify-start gap-4"
 					>
 						<div class="h-1 w-4/12 bg-white" />
 						<div class="">Allianz</div>
-					</a>
+					</div>
 
-					<a
-						on:click={choosProject}
-						href="/wizzer-teacher"
-						sveltekit:reload
+					<div
+						on:click={() => choosProject('/wizzer-teacher')}
 						in:fly={{ x: -400, duration: 1000, delay: 300 }}
 						class="flex cursor-pointer items-center justify-start gap-4"
 					>
 						<div class="h-1 w-4/12 bg-white" />
 						<div class="">Wizzer Teacher</div>
-					</a>
+					</div>
 
-					<a
-						on:click={choosProject}
-						href="/split"
-						sveltekit:reload
+					<div
+						on:click={() => choosProject('/split')}
 						in:fly={{ x: -400, duration: 1000, delay: 600 }}
 						class="flex cursor-pointer items-center justify-start gap-4"
 					>
 						<div class="h-1 w-4/12 bg-white" />
 						<div class="">Split</div>
-					</a>
+					</div>
 				</div>
 			{/if}
 		</div>
@@ -86,16 +83,15 @@
 		<div class={`font-wg-bold flex items-center text-white text-4xl lg:text-8xl h-[100vh] w-full`}>
 			<div class="space-y-24 w-full ">
 				{#if !projectIsVisible}
-					<a
-						on:click={choosProject}
-						href="/"
+					<div
+						on:click={() => choosProject('/')}
 						out:fly|local={{ x: 400, duration: 1000 }}
 						in:fly={{ x: 400, duration: 1000 }}
 						class="flex cursor-pointer items-center justify-end gap-10"
 					>
 						<div>Home</div>
 						<div class="h-1 w-5/12 bg-white" />
-					</a>
+			</div>
 				{/if}
 				<div on:click={toggleProjects} class="flex  items-center justify-end gap-10">
 					<div
@@ -111,10 +107,8 @@
 					/>
 				</div>
 				{#if !projectIsVisible}
-					<a
-						href="/about"
-						sveltekit:reload
-						on:click={choosProject}
+					<div
+						on:click={() => choosProject('/about')}
 						out:fly|local={{ x: 400, duration: 1000 }}
 						in:fly={{ x: 400, duration: 1000 }}
 						class="flex cursor-pointer items-center justify-end gap-10"
@@ -123,7 +117,7 @@
 							À propos
 						</div>
 						<div class="h-1 w-5/12 bg-white" />
-					</a>
+					</div>
 				{/if}
 			</div>
 		</div>

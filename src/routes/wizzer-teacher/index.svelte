@@ -108,7 +108,6 @@
 		<div
 			data-aos="fade-right"
 			data-aos-duration="1000"
-			data-aos-delay="2600"
 			class="bg-secondary text-primary p-10 rounded-3xl lg:mb-0 mb-10"
 		>
 			<div class="font-wg-bold text-[40px]">Contexte</div>
@@ -123,7 +122,6 @@
 		</div>
 		<div
 			data-aos="fade-left"
-			data-aos-delay="2600"
 			data-aos-duration="1000"
 			class="bg-primary  text-secondary p-10 rounded-3xl"
 		>
