@@ -3,9 +3,9 @@
 	import { onMount } from 'svelte';
 
 	import { fly } from 'svelte/transition';
-	const src0 = '/static/mockups/AZ_HP.png';
-	const src1 = '/static/mockups/WT_HP.png';
-	const src2 = '/static/mockups/SPLIT_HP.png';
+	const src0 = 'static/mockups/AZ_HP.png';
+	const src1 = 'static/mockups/WT_HP.png';
+	const src2 = 'static/mockups/SPLIT_HP.png';
 	let index = 0;
 
 	onMount(() => {
