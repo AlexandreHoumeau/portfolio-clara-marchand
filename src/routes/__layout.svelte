@@ -3,7 +3,7 @@
 	import AOS from 'aos';
 	import 'aos/dist/aos.css';
 	import { onMount } from 'svelte';
-	import { fly } from 'svelte/transition';
+	import { fly, fade } from 'svelte/transition';
 	import '../app.css';
 	import Transition from '../components/Transition.svelte';
 	export const load = async ({ url }) => ({
@@ -39,8 +39,8 @@
 	});
 </script>
 
-<nav class="fixed font-pp-bold cursor-pointer text-3xl top-10 z-50 right-20">
-	<div class={`${menuIsOpen ? 'text-white' : 'text-primary'}`} on:click={toggleMenu}>
+<nav class="fixed font-pp-bold cursor-pointer lg:text-xl top-5 sm:top-10 z-50 right-10 sm:right-20">
+	<div id="nav_title" class={`${menuIsOpen ? 'text-white' : 'text-primary'}`} on:click={toggleMenu}>
 		{menuIsOpen ? 'Fermer' : ' Menu'}
 	</div>
 	<!-- <a href="/menu">{menuIsOpen ? 'Fermer' : ' Menu'}</a> -->
@@ -64,8 +64,8 @@
 						in:fly={{ x: -400, duration: 1000, delay: 300 }}
 						class="flex cursor-pointer items-center justify-start gap-4"
 					>
-						<div class="h-1 w-4/12 bg-white" />
-						<div class="">Wizzer Teacher</div>
+						<div class="h-1 w-1/12 bg-white" />
+						<div>Wizzer Teacher</div>
 					</div>
 
 					<div
@@ -80,17 +80,16 @@
 			{/if}
 		</div>
 
-		<div class={`font-wg-bold flex items-center text-white text-4xl lg:text-8xl h-[100vh] w-full`}>
+		<div class={`font-wg-bold flex items-center text-white text-xl md:text-4xl lg:text-7xl h-[100vh] w-full`}>
 			<div class="space-y-24 w-full ">
 				{#if !projectIsVisible}
 					<div
 						on:click={() => choosProject('/')}
-						out:fly|local={{ x: 400, duration: 1000 }}
-						in:fly={{ x: 400, duration: 1000 }}
+						transition:fade|local
 						class="flex cursor-pointer items-center justify-end gap-10"
 					>
 						<div>Home</div>
-						<div class="h-1 w-5/12 bg-white" />
+						<div class="h-1 lg:w-5/12 w-3/4 bg-white" />
 			</div>
 				{/if}
 				<div on:click={toggleProjects} class="flex  items-center justify-end gap-10">
@@ -109,14 +108,13 @@
 				{#if !projectIsVisible}
 					<div
 						on:click={() => choosProject('/about')}
-						out:fly|local={{ x: 400, duration: 1000 }}
-						in:fly={{ x: 400, duration: 1000 }}
+						transition:fade|local
 						class="flex cursor-pointer items-center justify-end gap-10"
 					>
-						<div class="{projectIsVisible && 'text-5xl'} transition-all duration-1000">
+						<div class="transition-all duration-1000">
 							À propos
 						</div>
-						<div class="h-1 w-5/12 bg-white" />
+						<div class="h-1 w-3/12 md:w-5/12 bg-white" />
 					</div>
 				{/if}
 			</div>
@@ -127,3 +125,8 @@
 		<slot />
 	</Transition>
 {/if}
+<style>
+	#nav_title {
+		text-shadow: -1px 0 #FDF8F7, 0 1px #FDF8F7, 1px 0 #FDF8F7, 0 -1px #FDF8F7;
+	}
+</style>
