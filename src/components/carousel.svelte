@@ -7,8 +7,10 @@
 	const src1 = '/mockups/WT_HP.png';
 	const src2 = '/mockups/SPLIT_HP.png';
 	let index = 0;
-
+	let isMobile
 	onMount(() => {
+		let deviceWidth = window.innerWidth > 0 ? window.innerWidth : screen.width;
+		isMobile = deviceWidth <= 767;
 		setInterval(() => {
 			if (index === 2) {
 				index = 0;
@@ -19,7 +21,7 @@
 	});
 </script>
 
-<div class="grid grid-cols-5 lg:p-24 h-[100vh]">
+<div class="xl:grid mt-20 xl:mt-0 grid-cols-5 lg:p-24 h-[100vh]">
 	<div
 		class="bg-secondary xl:col-span-3 col-span-5 flex justify-center items-center rounded-3xl relative"
 	>
@@ -29,7 +31,7 @@
 				in:fly|local={{ x: 200, duration: 1000, delay: 1000 }}
 				src={src0}
 				alt="allianz"
-				class="w-[900px] absolute"
+				class="sm:w-[900px] xl:absolute"
 			/>
 		{/if}
 		{#if index === 1}
@@ -37,8 +39,8 @@
 				out:fly|local={{ x: -200, duration: 1000 }}
 				in:fly={{ x: 200, duration: 1000, delay: 1000 }}
 				src={src1}
-				alt="allianz"
-				class="w-[900px] absolute"
+				alt="wizzer-teacher"
+				class="w-[900px] xl:absolute"
 			/>
 		{/if}
 		{#if index === 2}
@@ -46,25 +48,24 @@
 				out:fly|local={{ x: -200, duration: 1000 }}
 				in:fly={{ x: 200, duration: 1000, delay: 1000 }}
 				src={src2}
-				alt="allianz"
-				class="w-[900px] absolute"
+				alt="split"
+				class="w-[900px] xl:absolute"
 			/>
 		{/if}
 	</div>
-	<div class="relative col-span-2">
+	<div class="xl:relative m-10 xl:m-0 xl:col-span-2">
 		{#if index === 0}
 			<a
 				href="allianz"
 				sveltekit:reload
 				out:fly|local={{ x: -200, duration: 1000, delay: 300 }}
 				in:fly={{ x: 200, duration: 1000, delay: 1300 }}
-				id="allianz"
-				class="text-primary font-wg-bold leading-tight absolute -left-44 top-10"
+				class="text-primary text-4xl xl:text-[77px] font-wg-bold leading-tight xl:absolute -left-44 top-10"
 			>
 				Espace client <br /> Allianz France
 				<div class="flex items-center justify-end">
 					<Icon name="arrow-right" />
-					<div class="text-xl font-pp-regular text-right">Découvrir</div>
+					<div class="sm:text-xl text-lg font-pp-regular text-right">Découvrir</div>
 				</div>
 			</a>
 		{/if}
@@ -75,13 +76,12 @@
 				href="wizzer-teacher"
 				out:fly|local={{ x: -200, duration: 1000, delay: 300 }}
 				in:fly={{ x: 200, duration: 1000, delay: 1300 }}
-				id="allianz"
-				class="text-primary font-wg-bold leading-tight absolute -left-44 top-10"
+				class="text-primary text-4xl xl:text-[77px] font-wg-bold leading-tight xl:absolute -left-44 top-10"
 			>
 				Wizzer<br />Teacher
 				<div class="flex items-center justify-end">
 					<Icon name="arrow-right" />
-					<div class="text-xl font-pp-regular text-right">Découvrir</div>
+					<div class="sm:text-xl text-lg font-pp-regular text-right">Découvrir</div>
 				</div>
 			</a>
 		{/if}
@@ -91,13 +91,12 @@
 		sveltekit:reload
 		href="split"				out:fly|local={{ x: -200, duration: 1000, delay: 300 }}
 				in:fly={{ x: 200, duration: 1000, delay: 1300 }}
-				id="allianz"
-				class="text-primary font-wg-bold leading-tight absolute -left-20 top-32"
+				class="text-primary text-4xl xl:text-[77px] font-wg-bold leading-tight xl:absolute -left-44 top-10"
 			>
 				Split
 				<div class="flex items-center justify-end">
 					<Icon name="arrow-right" />
-					<div class="text-xl font-pp-regular text-right">Découvrir</div>
+					<div class="sm:text-xl text-lg font-pp-regular text-right">Découvrir</div>
 				</div>
 			</a>
 		{/if}
