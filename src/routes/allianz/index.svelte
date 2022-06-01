@@ -19,6 +19,10 @@
 	});
 </script>
 
+<svelte:head>
+	<title>Clara Marchand - Allianz</title>
+</svelte:head>
+
 <div class="overflow-hidden ">
 	<div class="bg-secondary lg:relative lg:h-[493px] justify-center items-center w-full">
 		<h1

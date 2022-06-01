@@ -27,7 +27,7 @@
 </script>
 
 <svelte:head>
-	<title>Split</title>
+	<title>Clara Marchand - Split</title>
 </svelte:head>
 
 <div class="overflow-hidden">

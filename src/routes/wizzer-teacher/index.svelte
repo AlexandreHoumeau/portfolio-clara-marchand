@@ -25,7 +25,7 @@
 </script>
 
 <svelte:head>
-	<title>Wizzer Teacher</title>
+	<title>Clara Marchand - Wizzer Teacher</title>
 </svelte:head>
 
 <div class="overflow-hidden">
