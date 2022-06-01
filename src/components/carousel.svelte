@@ -57,7 +57,6 @@
 		{#if index === 0}
 			<a
 				href="allianz"
-				sveltekit:reload
 				out:fly|local={{ x: -200, duration: 1000, delay: 300 }}
 				in:fly={{ x: 200, duration: 1000, delay: 1300 }}
 				class="text-primary text-4xl xl:text-[77px] font-wg-bold leading-tight xl:absolute -left-44 top-10"
@@ -74,7 +73,6 @@
 
 		{#if index === 1}
 			<a
-				sveltekit:reload
 				href="wizzer-teacher"
 				out:fly|local={{ x: -200, duration: 1000, delay: 300 }}
 				in:fly={{ x: 200, duration: 1000, delay: 1300 }}
@@ -92,7 +90,6 @@
 
 		{#if index === 2}
 			<a
-				sveltekit:reload
 				href="split"
 				out:fly|local={{ x: -200, duration: 1000, delay: 300 }}
 				in:fly={{ x: 200, duration: 1000, delay: 1300 }}
