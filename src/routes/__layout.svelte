@@ -39,7 +39,7 @@
 	});
 </script>
 
-<nav class="fixed font-pp-bold cursor-pointer lg:text-xl top-10 z-50 right-10 lg:right-20">
+<nav class="fixed font-pp-bold cursor-pointer lg:text-xl top-5 md:top-10 z-50 right-10 lg:right-20">
 	<div class={`${menuIsOpen ? 'text-white' : 'text-primary'}`} on:click={toggleMenu}>
 		{menuIsOpen ? 'Fermer' : ' Menu'}
 	</div>
@@ -80,7 +80,7 @@
 			{/if}
 		</div>
 
-		<div class={`font-wg-bold flex items-center text-white text-xl md:text-4xl lg:text-7xl h-[100vh] w-full`}>
+		<div class={`font-wg-bold flex items-center text-white text-3xl md:text-4xl lg:text-7xl h-[100vh] w-full`}>
 			<div class="space-y-24 w-full ">
 				{#if !projectIsVisible}
 					<div
@@ -114,7 +114,7 @@
 						<div class="transition-all duration-1000">
 							À propos
 						</div>
-						<div class="h-1 w-2/12 bg-white" />
+						<div class="h-1 w-0 md:w-2/12 bg-white" />
 					</div>
 				{/if}
 			</div>
