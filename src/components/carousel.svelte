@@ -7,7 +7,7 @@
 	const src1 = '/mockups/WT_HP.png';
 	const src2 = '/mockups/SPLIT_HP.png';
 	let index = 0;
-	let isMobile
+	let isMobile;
 	onMount(() => {
 		let deviceWidth = window.innerWidth > 0 ? window.innerWidth : screen.width;
 		isMobile = deviceWidth <= 767;
@@ -63,10 +63,12 @@
 				class="text-primary text-4xl xl:text-[77px] font-wg-bold leading-tight xl:absolute -left-44 top-10"
 			>
 				Espace client <br /> Allianz France
-				<div class="flex items-center justify-end">
-					<Icon name="arrow-right" />
-					<div class="sm:text-xl text-lg font-pp-regular text-right">Découvrir</div>
-				</div>
+				{#if !isMobile}
+					<div class="flex items-center justify-end">
+						<Icon name="arrow-right" />
+						<div class="sm:text-xl text-lg font-pp-regular text-right">Découvrir</div>
+					</div>
+				{/if}
 			</a>
 		{/if}
 
@@ -79,25 +81,30 @@
 				class="text-primary text-4xl xl:text-[77px] font-wg-bold leading-tight xl:absolute -left-44 top-10"
 			>
 				Wizzer<br />Teacher
-				<div class="flex items-center justify-end">
-					<Icon name="arrow-right" />
-					<div class="sm:text-xl text-lg font-pp-regular text-right">Découvrir</div>
-				</div>
+				{#if !isMobile}
+					<div class="flex items-center justify-end">
+						<Icon name="arrow-right" />
+						<div class="sm:text-xl text-lg font-pp-regular text-right">Découvrir</div>
+					</div>
+				{/if}
 			</a>
 		{/if}
 
 		{#if index === 2}
-		<a
-		sveltekit:reload
-		href="split"				out:fly|local={{ x: -200, duration: 1000, delay: 300 }}
+			<a
+				sveltekit:reload
+				href="split"
+				out:fly|local={{ x: -200, duration: 1000, delay: 300 }}
 				in:fly={{ x: 200, duration: 1000, delay: 1300 }}
 				class="text-primary text-4xl xl:text-[77px] font-wg-bold leading-tight xl:absolute -left-44 top-10"
 			>
 				Split
-				<div class="flex items-center justify-end">
-					<Icon name="arrow-right" />
-					<div class="sm:text-xl text-lg font-pp-regular text-right">Découvrir</div>
-				</div>
+				{#if !isMobile}
+					<div class="flex items-center justify-end">
+						<Icon name="arrow-right" />
+						<div class="sm:text-xl text-lg font-pp-regular text-right">Découvrir</div>
+					</div>
+				{/if}
 			</a>
 		{/if}
 	</div>
