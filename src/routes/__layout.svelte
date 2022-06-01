@@ -39,8 +39,8 @@
 	});
 </script>
 
-<nav class="fixed font-pp-bold cursor-pointer lg:text-xl top-5 sm:top-10 z-50 right-10 sm:right-20">
-	<div id="nav_title" class={`${menuIsOpen ? 'text-white' : 'text-primary'}`} on:click={toggleMenu}>
+<nav class="fixed font-pp-bold cursor-pointer lg:text-xl top-10 z-50 right-10 lg:right-20">
+	<div class={`${menuIsOpen ? 'text-white' : 'text-primary'}`} on:click={toggleMenu}>
 		{menuIsOpen ? 'Fermer' : ' Menu'}
 	</div>
 	<!-- <a href="/menu">{menuIsOpen ? 'Fermer' : ' Menu'}</a> -->
@@ -114,7 +114,7 @@
 						<div class="transition-all duration-1000">
 							À propos
 						</div>
-						<div class="h-1 w-3/12 md:w-5/12 bg-white" />
+						<div class="h-1 w-2/12 bg-white" />
 					</div>
 				{/if}
 			</div>
@@ -125,8 +125,3 @@
 		<slot />
 	</Transition>
 {/if}
-<style>
-	#nav_title {
-		text-shadow: -1px 0 #FDF8F7, 0 1px #FDF8F7, 1px 0 #FDF8F7, 0 -1px #FDF8F7;
-	}
-</style>
