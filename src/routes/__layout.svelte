@@ -15,6 +15,7 @@
 
 <script>
 	import { goto } from '$app/navigation';
+	import Icon from '../utils/Icon.svelte';
 
 	export let key;
 	let menuIsOpen = false;
@@ -43,8 +44,11 @@
 	<div class={`${menuIsOpen ? 'text-white' : 'text-primary'}`} on:click={toggleMenu}>
 		{menuIsOpen ? 'Fermer' : ' Menu'}
 	</div>
-	<!-- <a href="/menu">{menuIsOpen ? 'Fermer' : ' Menu'}</a> -->
 </nav>
+
+<div class="fixed flex animate-bounce duration-1000 items-end bottom-10 top-[46vh]">
+	<Icon width="30px" height="30px" name="arrow-bottom" />
+</div>
 
 {#if menuIsOpen}
 	<div in:fly={{ y: 200, duration: 300 }} class="bg-primary grid grid-cols-2">
@@ -80,7 +84,9 @@
 			{/if}
 		</div>
 
-		<div class={`font-wg-bold flex items-center text-white text-3xl md:text-4xl lg:text-7xl h-[100vh] w-full`}>
+		<div
+			class={`font-wg-bold flex items-center text-white text-3xl md:text-4xl lg:text-7xl h-[100vh] w-full`}
+		>
 			<div class="space-y-24 w-full ">
 				{#if !projectIsVisible}
 					<div
@@ -90,7 +96,7 @@
 					>
 						<div>Home</div>
 						<div class="h-1 lg:w-5/12 w-3/4 bg-white" />
-			</div>
+					</div>
 				{/if}
 				<div on:click={toggleProjects} class="flex  items-center justify-end gap-10">
 					<div
@@ -111,9 +117,7 @@
 						transition:fade|local
 						class="flex cursor-pointer items-center justify-end gap-10"
 					>
-						<div class="transition-all duration-1000">
-							À propos
-						</div>
+						<div class="transition-all duration-1000">À propos</div>
 						<div class="h-1 w-0 md:w-2/12 bg-white" />
 					</div>
 				{/if}
