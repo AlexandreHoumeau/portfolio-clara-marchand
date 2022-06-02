@@ -35,10 +35,10 @@
 				<div
 					in:fly={{ y: -1000, duration: 3000 }}
 					id="title"
-					class="absolute lg:text-7xl text-4xl text-center name"
+					class="absolute lg:text-[200px] text-4xl text-center name"
 				>
-					Clara Marchand<br />
-					<div class="lg:text-4xl text-3xl sub">UX DESIGNER</div>
+					Clara<br/> <br/> <br/> <br/> Marchand<br /><br/><br/>
+					<div class="lg:text-[80px] text-3xl mt-4 sub">UX DESIGNER</div>
 				</div>
 				<Blob />
 			{/if}
