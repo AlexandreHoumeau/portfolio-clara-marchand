@@ -6,11 +6,20 @@
 
 	let loader;
 	let isVisible = false;
-
+	let bgVisible = false
 	onMount(async () => {
-		console.log('%c Made with', 'font-weight: bold; font-size: 30px;color: blue; text-shadow: 3px 3px 3px rgb(217,31,38) , 6px 6px 0 rgb(226,91,14) , 9px 9px 0 rgb(245,221,8) , 12px 12px 0 rgb(5,148,68) , 15px 15px 0 rgb(2,135,206) , 18px 18px 0 rgb(4,77,145) , 21px 21px 0 rgb(42,21,113)');
-		console.log('%c Svelte', 'font-weight: bold; font-size: 30px;color: red; text-shadow: 3px 3px 3px rgb(217,31,38) , 6px 6px 0 rgb(226,91,14) , 9px 9px 0 rgb(245,221,8) , 12px 12px 0 rgb(5,148,68) , 15px 15px 0 rgb(2,135,206) , 18px 18px 0 rgb(4,77,145) , 21px 21px 0 rgb(42,21,113)');
-		console.log('%c by Alexandre Houmeau', 'font-weight: bold; font-size: 30px;color: purple; text-shadow: 3px 3px 0 rgb(217,31,38) , 6px 6px 0 rgb(226,91,14) , 9px 9px 0 rgb(245,221,8) , 12px 12px 0 rgb(5,148,68) , 15px 15px 0 rgb(2,135,206) , 18px 18px 0 rgb(4,77,145) , 21px 21px 0 rgb(42,21,113)');
+		console.log(
+			'%c Made with',
+			'font-weight: bold; font-size: 30px;color: blue; text-shadow: 3px 3px 3px rgb(217,31,38) , 6px 6px 0 rgb(226,91,14) , 9px 9px 0 rgb(245,221,8) , 12px 12px 0 rgb(5,148,68) , 15px 15px 0 rgb(2,135,206) , 18px 18px 0 rgb(4,77,145) , 21px 21px 0 rgb(42,21,113)'
+		);
+		console.log(
+			'%c Svelte',
+			'font-weight: bold; font-size: 30px;color: red; text-shadow: 3px 3px 3px rgb(217,31,38) , 6px 6px 0 rgb(226,91,14) , 9px 9px 0 rgb(245,221,8) , 12px 12px 0 rgb(5,148,68) , 15px 15px 0 rgb(2,135,206) , 18px 18px 0 rgb(4,77,145) , 21px 21px 0 rgb(42,21,113)'
+		);
+		console.log(
+			'%c by Alexandre Houmeau',
+			'font-weight: bold; font-size: 30px;color: purple; text-shadow: 3px 3px 0 rgb(217,31,38) , 6px 6px 0 rgb(226,91,14) , 9px 9px 0 rgb(245,221,8) , 12px 12px 0 rgb(5,148,68) , 15px 15px 0 rgb(2,135,206) , 18px 18px 0 rgb(4,77,145) , 21px 21px 0 rgb(42,21,113)'
+		);
 		console.log('https://github.com/AlexandreHoumeau');
 
 		setTimeout(() => {
@@ -19,13 +28,17 @@
 				loader.style.height = '100%';
 				setTimeout(() => {
 					isVisible = true;
+					setTimeout(() => {
+						bgVisible = true
+					}, 2000)
 				}, 1200);
 			}, 1200);
 		}, 1000);
 	});
 </script>
+
 <svelte:head>
-  <title>Clara Marchand</title>
+	<title>Clara Marchand</title>
 </svelte:head>
 
 <div class="w-screen h-screen">
@@ -35,10 +48,10 @@
 				<div
 					in:fly={{ y: -1000, duration: 3000 }}
 					id="title"
-					class="absolute lg:text-[200px] text-4xl text-center name"
-				>
-					Clara<br/> <br/> <br/> <br/> Marchand<br /><br/><br/>
-					<div class="lg:text-[80px] text-3xl mt-4 sub">UX DESIGNER</div>
+					class="absolute transition-all duration-1000 {bgVisible && 'bg-white'} rounded-full p-4 lg:text-[200px] text-4xl text-center name">
+					<div>Clara</div>
+					<div class="lg:my-20 my-0">Marchand</div>
+					<div class="lg:text-[80px] text-3xl sub">UX DESIGNER</div>
 				</div>
 				<Blob />
 			{/if}
