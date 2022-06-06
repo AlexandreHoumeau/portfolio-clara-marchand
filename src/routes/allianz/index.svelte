@@ -8,7 +8,9 @@
 	let visible = true;
 
 	onMount(() => {
-		AOS.refreshHard();
+		setTimeout(() => {
+			AOS.refresh();
+		}, 1000)
 		setTimeout(() => {
 			visible = false;
 		}, 300);

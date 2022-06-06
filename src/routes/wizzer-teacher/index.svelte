@@ -13,6 +13,9 @@
 	let visible = true;
 
 	onMount(() => {
+		setTimeout(() => {
+			AOS.refresh();
+		}, 1000);
 		// let deviceHeihgt = window.innerHeight > 0 ? window.innerHeight : screen.height;
 		const interval = setInterval(() => {
 			visible = false;
