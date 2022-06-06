@@ -6,16 +6,19 @@
 
 	const projects = [
 		{
+			id: 0,
 			src: '/mockups/AZ_HP.png',
 			title: 'Espace client Allianz France',
 			href: 'allianz'
 		},
 		{
+			id: 1,
 			src: '/mockups/WT_HP.png',
 			title: 'Wizzerd Teacher',
 			href: 'wizzer-teacher'
 		},
 		{
+			id: 2,
 			src: '/mockups/SPLIT_HP.png',
 			title: 'Split App',
 			href: 'split'
@@ -40,7 +43,7 @@
 	});
 </script>
 
-<div class="xl:grid lg:mt-20 lg:h-[100vh] xl:mt-0 grid-cols-5 lg:p-24">
+<div class="xl:grid lg:mt-20 lg:h-[100vh] xl:mt-0 grid-cols-5 lg:px-24 lg:pt-24">
 	<div
 		class="bg-secondary h-[40vh] lg:h-full xl:col-span-3 col-span-5 flex justify-center items-center lg:rounded-3xl relative"
 	>
@@ -66,6 +69,16 @@
 			/>
 		{/each}
 	</div>
+</div>
+<div class="flex justify-center space-x-4 my-10">
+	{#each projects as project}
+		<div
+			on:click="{() => index = project.id}"
+			class="{index === project.id
+				? 'bg-primary'
+				: 'bg-primary_light'} cursor-pointer transition-all duration-300 rounded-full w-3 h-3"
+		/>
+	{/each}
 </div>
 
 <style>
