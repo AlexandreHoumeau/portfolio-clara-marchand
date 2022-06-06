@@ -4,8 +4,11 @@ module.exports = {
     extend: {},
     colors: {
       primary: '#6E44FF',
+      primary_light: '#BFADFF',
       secondary: '#FDF8F7',
-      white: '#fff'
+      white: '#fff',
+      gray: '#6c757d',
+      graylight: '#dee2e6'
     },
 
     fontFamily: {
