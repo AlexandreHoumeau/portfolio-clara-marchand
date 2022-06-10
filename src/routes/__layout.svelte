@@ -94,14 +94,14 @@
 						transition:fade|local
 						class="flex cursor-pointer items-center justify-end gap-10"
 					>
-						<div>Home</div>
+						<div class="lg:hover:text-8xl transition-all duration-300">Home</div>
 						<div class="h-1 lg:w-5/12 w-3/4 bg-white" />
 					</div>
 				{/if}
 				<div on:click={toggleProjects} class="flex  items-center justify-end gap-10">
 					<div
 						class="{projectIsVisible &&
-							'text-xl lg:text-5xl'} cursor-pointer transition-all duration-1000"
+							'text-xl lg:text-5xl'} lg:hover:text-8xl cursor-pointer transition-all duration-300"
 					>
 						{projectIsVisible ? 'Fermer' : 'Projets'}
 					</div>
@@ -117,7 +117,7 @@
 						transition:fade|local
 						class="flex cursor-pointer items-center justify-end gap-10"
 					>
-						<div class="transition-all duration-1000">À propos</div>
+						<div class="lg:hover:text-8xl transition-all duration-300">À propos</div>
 						<div class="h-1 w-0 md:w-2/12 bg-white" />
 					</div>
 				{/if}

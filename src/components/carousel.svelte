@@ -49,15 +49,12 @@
 	>
 		{#each [projects[index]] as project (index)}
 			<div
-				transition:fly={{ x: -200 }}
+				transition:fly={{ x: -200, duration: 1000 }}
 				on:click={() => chooseProject(project.href)}
-				class="absolute cursor-pointer left-4 lg:left-3/4 z-50 w-2/3 top-4 lg:top-20 text-primary text-4xl xl:text-[77px] font-wg-bold leading-tight"
+				class="absolute cursor-pointer left-4 lg:left-3/4 lg:ml-20 z-50 w-2/3 top-4 lg:top-20 text-primary text-4xl xl:text-[77px] font-wg-bold leading-tight"
 			>
 				<div>
 					{project.title}
-					<!-- <div class="xl:relative hidden">
-						<Icon class="absolute" width="30px" height="30px" name="arrow-right" />
-					</div> -->
 				</div>
 			</div>
 			<img
