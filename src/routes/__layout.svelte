@@ -42,13 +42,17 @@
 
 <nav class="fixed font-pp-bold cursor-pointer lg:text-xl top-5 md:top-10 z-50 right-10 lg:right-20">
 	<div class={`${menuIsOpen ? 'text-white' : 'text-primary'}`} on:click={toggleMenu}>
-		{menuIsOpen ? 'Fermer' : ' Menu'}
+		{#if !menuIsOpen}
+			<Icon name="menu" width="30px" height="30px" class="{menuIsOpen ? 'stroke-secondary' : 'stroke-primary'}" />
+		{:else}
+			<Icon name="cross" width="30px" height="30px" class="{menuIsOpen ? 'stroke-secondary' : 'stroke-primary'}" />
+		{/if}
 	</div>
 </nav>
 
-<div class="fixed flex animate-bounce duration-1000 items-end bottom-10 top-[46vh]">
+<!-- <div class="fixed flex animate-bounce duration-1000 items-end bottom-10 top-[46vh]">
 	<Icon width="30px" height="30px" name="arrow-bottom" />
-</div>
+</div> -->
 
 {#if menuIsOpen}
 	<div in:fly={{ y: 200, duration: 300 }} class="bg-primary grid grid-cols-2">
