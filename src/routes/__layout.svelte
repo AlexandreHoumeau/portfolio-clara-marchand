@@ -3,6 +3,7 @@
 	import AOS from 'aos';
 	import 'aos/dist/aos.css';
 	import { onMount } from 'svelte';
+	import { page } from '$app/stores';
 	import { fly, fade } from 'svelte/transition';
 	import '../app.css';
 	import Transition from '../components/Transition.svelte';
@@ -18,6 +19,7 @@
 	import Icon from '../utils/Icon.svelte';
 
 	export let key;
+
 	let menuIsOpen = false;
 	let projectIsVisible = false;
 
@@ -43,16 +45,25 @@
 <nav class="fixed font-pp-bold cursor-pointer lg:text-xl top-5 md:top-10 z-50 right-10 lg:right-20">
 	<div class={`${menuIsOpen ? 'text-white' : 'text-primary'}`} on:click={toggleMenu}>
 		{#if !menuIsOpen}
-			<Icon name="menu" width="30px" height="30px" class="{menuIsOpen ? 'stroke-secondary' : 'stroke-primary'}" />
+			<div class="bg-secondary p-4 rounded-full">
+				<Icon
+					id="menu"
+					name="menu"
+					width="30px"
+					height="30px"
+					class={menuIsOpen ? 'stroke-secondary' : 'stroke-primary'}
+				/>
+			</div>
 		{:else}
-			<Icon name="cross" width="30px" height="30px" class="{menuIsOpen ? 'stroke-secondary' : 'stroke-primary'}" />
+			<Icon
+				name="cross"
+				width="30px"
+				height="30px"
+				class={menuIsOpen ? 'stroke-secondary' : 'stroke-primary'}
+			/>
 		{/if}
 	</div>
 </nav>
-
-<!-- <div class="fixed flex animate-bounce duration-1000 items-end bottom-10 top-[46vh]">
-	<Icon width="30px" height="30px" name="arrow-bottom" />
-</div> -->
 
 {#if menuIsOpen}
 	<div in:fly={{ y: 200, duration: 300 }} class="bg-primary grid grid-cols-2">
@@ -133,3 +144,11 @@
 		<slot />
 	</Transition>
 {/if}
+
+<style>
+	#menu {
+		background-color: red;
+		/* -webkit-mask-image: url(icon.svg);
+		mask-image: url(icon.svg); */
+	}
+</style>
