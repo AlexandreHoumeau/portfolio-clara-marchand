@@ -53,7 +53,7 @@
 </script>
 
 <div class="xl:grid lg:mt-20 lg:h-[100vh] xl:mt-0 grid-cols-5 lg:px-24 relative lg:pt-24">
-	<div on:click={goBack} class="absolute cursor-pointer z-10 bottom-0 top-0 flex items-center">
+	<div on:click={goBack} class="absolute lg:flex hidden cursor-pointer z-10 bottom-0 top-0  items-center">
 		<svg
 			width="106"
 			height="106"
@@ -69,7 +69,7 @@
 	</div>
 	<div
 		on:click={goNext}
-		class="absolute cursor-pointer z-10 bottom-0 top-0 right-0 flex items-center"
+		class="absolute cursor-pointer z-10 bottom-0 top-0 right-0 lg:flex hidden items-center"
 	>
 		<svg
 			width="106"
