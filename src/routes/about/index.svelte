@@ -1,4 +1,5 @@
 <script>
+	import { goto } from '$app/navigation';
 	import Icon from '../../utils/Icon.svelte';
 	const Skills = '/mockups/skills.png';
 
@@ -74,7 +75,9 @@
 			</div>
 		</div>
 
-		<div class="bg-secondary flex justify-center items-center col-span-1 lg:p-0 p-10 rounded-3xl mt-10 lg:mt-0">
+		<div
+			class="bg-secondary flex justify-center items-center col-span-1 lg:p-0 p-10 rounded-3xl mt-10 lg:mt-0"
+		>
 			<img src={Skills} class="lg:w-80" alt="skills" />
 		</div>
 	</div>
@@ -121,7 +124,13 @@
 			{/each}
 		</div>
 		<div class="my-10 flex justify-center">
-			<button class="bg-primary text-white font-pp-bold text-xl w-80 h-16 rounded-3xl">
+			<button
+				on:click={() =>
+					goto(
+						'https://www.malt.fr/profile/claramarchand2?q=clara+marchand&remoteAllowed=true&priceFilter=300%2C310&searchid=63c71fe172a97813df31b8f8'
+					)}
+				class="bg-primary text-white font-pp-bold text-xl w-80 h-16 rounded-3xl"
+			>
 				Accéder à mon profil Malt
 			</button>
 		</div>
