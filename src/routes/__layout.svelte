@@ -95,6 +95,14 @@
 						<div class="h-1 w-4/12 bg-white" />
 						<div class="">Split</div>
 					</div>
+					<div
+						on:click={() => choosProject('/identites-visuelles')}
+						in:fly={{ x: -400, duration: 1000, delay: 800 }}
+						class="flex cursor-pointer items-center justify-start gap-4"
+					>
+						<div class="h-1 w-1/12 bg-white" />
+						<div class="">Identités visuelles</div>
+					</div>
 				</div>
 			{/if}
 		</div>
@@ -140,9 +148,9 @@
 		</div>
 	</div>
 {:else}
-	<Transition>
-		<slot />
-	</Transition>
+	<!-- <Transition> -->
+	<slot />
+	<!-- </Transition> -->
 {/if}
 
 <style>

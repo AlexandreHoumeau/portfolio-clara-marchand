@@ -6,6 +6,7 @@
 	import SchemaStudent from './schemaStudent.svelte';
 	import SchemaTeacher from './schemaTeacher.svelte';
 	import SchemaMobile from './schemaMobile.svelte';
+	import Button from '../../components/button.svelte';
 
 	const banner = '/mockups/SPLIT_contenu.png';
 	const banner2 = '/mockups/SPLIT_contenu1.png';
@@ -18,7 +19,7 @@
 	onMount(() => {
 		setTimeout(() => {
 			AOS.refresh();
-		}, 1000)
+		}, 1000);
 		setTimeout(() => {
 			visible = false;
 		}, 300);
@@ -149,7 +150,10 @@
 			<div class="font-pp-regular text-[16px]">
 				Split est une plateforme de partage de compétences et d'expériences digitales s’inspirant du
 				fonctionnement reverse mentoring. Des jeunes qui viennent d’intégrer le monde professionnel
-				vont former des personnes déjà.
+				vont former des personnes avec une expérience professionnelle plus importante mais ayant
+				besoin de formations sur des outils digitaux spécifiques. La plateforme comprend ainsi deux
+				types de profils : les apprenants et les formateurs. Elle permet une mise en relation entre
+				ces deux profils afin de réserver des créneaux de formations.
 			</div>
 		</div>
 		<div
@@ -198,14 +202,15 @@
 		class="lg:grid grid-cols-2 gap-10 font-pp-regular items-center text-justify mx-4 my-20 lg:mx-20 text-primary"
 	>
 		<div data-aos="fade-right" data-aos-duration="300">
-			Le bootcamper accède à différents modules dans lesquels se trouvent des cours et des exercices
-			qu’il peut effectuer. Il participe également à des battles créées par l’admin et s’en suit un
-			classement.
+			L’utilisateur élève accède aux profils des formateurs et au détail des formations qu’ils
+			proposent. L’utilisateur accède également à son calendrier comprenant les formations à venir
+			ainsi qu’à un historique des formations qu’il a déjà suivi.
 		</div>
 
 		<div class="lg:mt-0 mt-10" data-aos="fade-left" data-aos-duration="300">
-			Le bootcamper accède au classement de la battle à laquelle il a participé. <b />Il a également
-			accès à une partie profil dans laquelle il peut personnaliser ses informations personnelles.
+			L’utilisateur réserve des formations directement depuis l’outil. Il peut également contacter
+			les formateurs via la messagerie instantanée. Il peut publier un avis sur les formateurs suite
+			à la formation réalisée. Enfin, il accède à son profil et ses informations personnelles.
 		</div>
 	</div>
 
@@ -227,17 +232,19 @@
 	</div>
 
 	<div
-		class="lg:grid grid-cols-2 gap-10 font-pp-regular items-center text-justify mx-4 my-20 lg:mx-20 text-primary"
+		class="lg:grid grid-cols-2 gap-10 font-pp-regular items-start text-justify mx-4 my-20 lg:mx-20 text-primary"
 	>
 		<div data-aos="fade-right" data-aos-duration="300">
-			Le bootcamper accède à différents modules dans lesquels se trouvent des cours et des exercices
-			qu’il peut effectuer. Il participe également à des battles créées par l’admin et s’en suit un
-			classement.
+			L’utilisateur formateur créer son profil en indiquant ses spécialités et formations qu’il
+			propose. Il peut ajouter de nouvelles formations en précisant ses horaires. Depuis son
+			dashboard, il accède aux avis qui lui ont été attribués ainsi que ses statistiques
+			personnelles sur les formatios qu’il a donné.
 		</div>
 
 		<div class="lg:mt-0 mt-10" data-aos="fade-left" data-aos-duration="300">
-			Le bootcamper accède au classement de la battle à laquelle il a participé.<br />
-			Il a également accès à une partie profil dans laquelle il peut personnaliser ses informations personnelles.
+			Le formateur peut également contacter les apprenants via la messagerie instantanée. Il est
+			possible pour lui de réserver des formations auprès d’autres formateurs et ainsi d’effectuer
+			les mêmes parcours que les profils apprenants.
 		</div>
 	</div>
 
@@ -258,18 +265,17 @@
 			<img src={banner5} class="lg:w-[800px]" alt="banner" />
 		</div>
 	</div>
-	<div
-		class="lg:grid grid-cols-2 gap-10 font-pp-regular items-center text-justify mx-4 my-20 lg:mx-20 text-primary"
-	>
-		<div data-aos="fade-right" data-aos-duration="300">
-			Le bootcamper accède à différents modules dans lesquels se trouvent des cours et des exercices
-			qu’il peut effectuer. Il participe également à des battles créées par l’admin et s’en suit un
-			classement.
+	<div class="font-pp-regular flex justify-center text-justify mx-4 my-20 lg:mx-20 text-primary">
+		<div class="w-[550px]">
+			<div data-aos="fade-right" data-aos-duration="300">
+				L’application mobile a pour objectif d’être complémentaire à la plateforme desktop. Les
+				fontionnalités accessibles sont la réservation de formations, la publication d’avis, l’accès
+				à la messagerie instantanée et le profil.
+			</div>
 		</div>
+	</div>
 
-		<div class="lg:mt-0 mt-10" data-aos="fade-left" data-aos-duration="300">
-			Le bootcamper accède au classement de la battle à laquelle il a participé.<br />
-			Il a également accès à une partie profil dans laquelle il peut personnaliser ses informations personnelles.
-		</div>
+	<div class="flex justify-center mt-10 mb-20">
+		<Button url="identites-visuelles" />
 	</div>
 </div>

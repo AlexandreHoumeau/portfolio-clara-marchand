@@ -1,12 +1,13 @@
 <script>
 	import Icon from '../../utils/Icon.svelte';
+	const Skills = '/mockups/skills.png';
 
 	const softwares = [
 		{ logo: 'figma', title: 'Figma' },
 		{ logo: 'xd', title: 'Adobe Xd' },
 		{ logo: 'psd', title: 'Sketch' },
 		{ logo: 'invision', title: 'Invision' },
-		{ logo: 'ai', title: 'Illusrtator' },
+		{ logo: 'ai', title: 'Illustrator' },
 		{ logo: 'premiere', title: 'Premiere Pro' },
 		{ logo: 'psd', title: 'Photoshop' },
 		{ logo: 'after', title: 'After effect' }
@@ -45,27 +46,38 @@
 
 	const reviews = [
 		{
-			name: 'Anne Lehec',
-			role: 'Manager - Allianz',
+			name: 'David',
+			company: 'Allianz',
 			review:
-				'Lorem ipsum dolor sit amet bla lorem ipsum dolor sit amet bla lorem ipsum dolor sit amet bla lorem ipsum dolor sit amet bla lorem ipsum dolor sit amet bla lorem ipsum dolor sit amet bla lorem ipsum dolor sit amet bla lorem ipsum dolor sit amet bla lorem ipsum dolor sit amet bla lorem ipsum dolor sit amet bla'
+				"“Clara cerne très vite le sujet, comprend les enjeux et fait des propositions lorsque nécessaire. Le travail livré est toujours de qualité. Très bonne communication et respect des délais. C'est très agréable de travailler avec Clara. “"
 		},
 		{
-			name: 'Lara Faroux',
-			role: 'Ux designer - Allianz',
+			name: 'Axel',
+			company: 'Split',
 			review:
-				'Lorem ipsum dolor sit amet bla lorem ipsum dolor sit amet bla lorem ipsum dolor sit amet bla lorem ipsum dolor sit amet bla lorem ipsum dolor sit amet bla lorem ipsum dolor sit amet bla lorem ipsum dolor sit amet bla lorem ipsum dolor sit amet bla lorem ipsum dolor sit amet bla lorem ipsum dolor sit amet bla'
-		},
-		{
-			name: 'Gabriella Fedrigo',
-			role: 'Ux designer - Allianz',
-			review:
-				'Lorem ipsum dolor sit amet bla lorem ipsum dolor sit amet bla lorem ipsum dolor sit amet bla lorem ipsum dolor sit amet bla lorem ipsum dolor sit amet bla lorem ipsum dolor sit amet bla lorem ipsum dolor sit amet bla lorem ipsum dolor sit amet bla lorem ipsum dolor sit amet bla lorem ipsum dolor sit amet bla'
+				"“Clara nous a été d'une grande aide quant à la création des parcours utilisateurs, structure, maquettes. Elle a toujours respecté les délais et ce fut très agréable de travailler avec elle.”"
 		}
 	];
 </script>
 
 <div class="lg:p-20 p-4 font-pp-regular text-primary">
+	<div class="lg:grid mb-10 grid-cols-2 gap-10">
+		<div class="bg-secondary  col-span-1 rounded-3xl p-6">
+			<div class="text-[40px] mb-6 font-wg-bold text-4xl">Merci d’avoir cliqué sur mon site</div>
+			<div class="bg-white p-6 rounded-3xl text-lg">
+				<div class="mb-8">
+					Je fais en sorte que les interfaces digitales mobile et desktop répondent au mieux aux
+					besoins des utilisateurs. Ayant la double casquette UX et UI, je créer une expérience
+					utilisateur intuitive et je m'occupe de concevoir un design adapté à votre produit.
+				</div>
+				<div>N’hésitez pas à me contacter afin que nous discutions ensemble de votre projet !</div>
+			</div>
+		</div>
+
+		<div class="bg-secondary flex justify-center items-center col-span-1 lg:p-0 p-10 rounded-3xl mt-10 lg:mt-0">
+			<img src={Skills} class="lg:w-80" alt="skills" />
+		</div>
+	</div>
 	<div class="lg:grid grid-cols-3 gap-10">
 		<div class="bg-secondary  col-span-1 rounded-3xl p-6">
 			<div class="text-[40px] mb-6 font-wg-bold">Logiciels</div>
@@ -88,7 +100,7 @@
 						<div>{diplome.endAt}</div>
 					</div>
 					<div>
-						<div class="font-pp-bold">{diplome.title}</div>
+						<div class="font-pp-bold text-md">{diplome.title}</div>
 						<div class="">{diplome.school}</div>
 						<div class="">{diplome.location}</div>
 					</div>
@@ -99,14 +111,19 @@
 
 	<div class="bg-secondary font-pp-regular text-primary mt-10 rounded-3xl lg:p-6">
 		<div class="text-[40px] mb-6 p-6 lg:p-0 font-wg-bold">Avis</div>
-		<div class="lg:grid space-y-4 lg:space-y-0 grid-cols-3  gap-4">
+		<div class="lg:grid space-y-4 lg:space-y-0 grid-cols-2  gap-4">
 			{#each reviews as rev}
 				<div class="bg-white p-5 col-span-1 text-lg rounded-3xl">
-					<div class="font-pp-bold">{rev.name}</div>
-					<div>{rev.role}</div>
+					<div class="font-pp-bold">{rev.company}</div>
+					<div>{rev.name}</div>
 					<div class="mt-5">{rev.review}</div>
 				</div>
 			{/each}
+		</div>
+		<div class="my-10 flex justify-center">
+			<button class="bg-primary text-white font-pp-bold text-xl w-80 h-16 rounded-3xl">
+				Accéder à mon profil Malt
+			</button>
 		</div>
 	</div>
 </div>

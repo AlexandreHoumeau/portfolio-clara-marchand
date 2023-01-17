@@ -1,10 +1,12 @@
 <script>
-	import { onDestroy, onMount } from 'svelte';
-	import { fly } from 'svelte/transition';
 	import AOS from 'aos';
-	import 'aos/dist/aos.css'; // You can also use <link> for styles
-	import SchemeUser from './schemeUser.svelte';
+	import 'aos/dist/aos.css';
+	import { onMount } from 'svelte';
+	import { fly } from 'svelte/transition';
+// You can also use <link> for styles
+	import Button from '../../components/button.svelte';
 	import SchemeAdmin from './schemeAdmin.svelte';
+	import SchemeUser from './schemeUser.svelte';
 
 	const banner = '/mockups/WT_contenu1.png';
 	const banner2 = '/mockups/WT_user.png';
@@ -210,6 +212,10 @@
 			Le bootcamper accède au classement de la battle à laquelle il a participé.<br />
 			Il a également accès à une partie profil dans laquelle il peut personnaliser ses informations personnelles.
 		</div>
+	</div>
+
+	<div class="flex justify-center mt-10 mb-20">
+		<Button url="split" />
 	</div>
 </div>
 
